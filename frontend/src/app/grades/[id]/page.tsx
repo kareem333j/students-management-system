@@ -2,12 +2,13 @@ import { Container } from '@/components/container'
 import Title from '@/components/title';
 import { Badge } from '@/components/ui/badge';
 import UsersTable from '@/components/usersTable';
+import api from '@/lib/api';
 import React from 'react'
 
 const Grade = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params;
-  const res = await fetch(`http://127.0.0.1:8000/api/students/grades/${id}`);
-  const grades = await res.json();
+  const res = await api.get(`/students/grades/${id}`);
+  const grades = await res.data;
   
   return (
     <Container className='p-0'>
