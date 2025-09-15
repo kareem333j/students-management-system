@@ -5,6 +5,8 @@ import Navbar from "../components/navbar";
 import { Toaster } from "sonner";
 import Providers from "./providers";
 import Footer from "@/components/footer";
+import { OctagonAlert } from "lucide-react";
+import Title from "@/components/title";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -29,6 +31,12 @@ export default function RootLayout({
       <body
         className={`antialiased ${tajawal.className}`}
       >
+        <div className="w-full h-[100vh] bg-white fixed top-0 left-0 z-1000 flex items-center justify-center lg:hidden md:hidden flex-col gap-10 text-red-600">
+          <OctagonAlert className="mr-2" width={100} height={100} />
+          <Title className="text-center">
+            النظام لا يدعم الشاشات الصغيرة
+          </Title>
+        </div>
         <div className="flex w-[100%] flex-col min-h-screen">
           <Providers>
             <Navbar />
