@@ -9,8 +9,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(BASE_DIR / ".env")
 
 SECRET_KEY = os.getenv("SECRET_KEY")
-DEBUG = os.getenv("DEBUG") == "True"
-ALLOWED_HOSTS = []
+DEBUG = os.getenv("DEBUG") == "False"
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
